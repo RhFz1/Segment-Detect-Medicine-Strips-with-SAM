@@ -11,7 +11,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # Create model, define loss function and optimizer
 model = Model().to(device)
 criterion = nn.BCELoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=1e-4)
+optimizer = optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-4)
 
 # Learning rate scheduler
 scheduler = StepLR(optimizer, step_size=5, gamma=0.1)
@@ -50,8 +50,7 @@ for epoch in range(num_epochs):
     scheduler.step()
     
     epoch_time = time.time() - start_time
-    print(f'Epoch {epoch+1}/{num_epochs}, Loss: {epoch_loss:.4f}, Accuracy: {epoch_acc:.4f}, Time: {epoch_time:.2f}s')
-
+    print(f'Epoch {epoch+1}/{num_epochs}, Loss: {epoch_loss:.4f}, Accuracy: {epoch_acc:.4f}, Time: {epoch_time:.4f}s')
 
 # Save the model
 torch.save(model.state_dict(), os.path.join('/home/ec2-user/FAIR/SAM/registry', 'model.pth'))

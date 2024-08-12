@@ -2,8 +2,11 @@ import torch
 import torch.nn.functional as F
 import torch.nn as nn
 import torch.optim as optim
+import warnings
 from torchvision import datasets, transforms, models
 from typing import Tuple
+
+warnings.filterwarnings("ignore")
 
 class Model(nn.Module):
     
