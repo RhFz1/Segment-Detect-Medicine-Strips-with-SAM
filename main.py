@@ -1,10 +1,12 @@
 import torch
+import time
 import os
 import cv2
 import supervision as sv
 import matplotlib.pyplot as plt
+import numpy as np
 import warnings
-from segment_anything import sam_model_registry, SamAutomaticMaskGenerator, SamPredictor
+from segment_anything import sam_model_registry, SamAutomaticMaskGenerator
 from argparse import ArgumentParser
 
 # Here I want to take in the prev variable as my argument
@@ -19,7 +21,7 @@ DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 MODEL_TYPE = "vit_h"
 HOME = '/home/ec2-user/FAIR/SAM'
 
-IMAGE_PATH = os.path.join(HOME, "images", "example_10.jpg")
+IMAGE_PATH = os.path.join(HOME, "images", "example_4.jpeg")
 
 CHECKPOINT_PATH = os.path.join(HOME, "weights", "sam_vit_h_4b8939.pth")
 print(CHECKPOINT_PATH, "; exist:", os.path.isfile(CHECKPOINT_PATH))
@@ -30,29 +32,20 @@ mask_generator = SamAutomaticMaskGenerator(sam, min_mask_region_area=10000)
 image_bgr = cv2.imread(IMAGE_PATH)
 image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
 
+t0 = time.time()
 sam_result = mask_generator.generate(image_rgb)
-# sam_result = list(filter(lambda x : x['area'] > 16000 and x['area'] < 28000, sam_result))
+t1 = time.time()
 
-# print(sam_result)
-masks = [
-    mask['segmentation']
-    for mask in sorted(sam_result, key=lambda x: x['area'], reverse=True)
-]
-areas = [
-    mask['area']
-    for mask in sorted(sam_result, key=lambda x: x['area'], reverse=True)
-]
+print(f"Total time for Segmentation.\nTime: {t1 - t0:.3f}s")
 
-for i, mask in enumerate(masks):
-    plt.imshow(mask)
-    plt.axis('off')
-    plt.savefig(os.path.join(HOME, "example_maps", f"example_mask_{i+prev}.jpeg"))
-    plt.show()
+for i in range(min(len(sam_result), 10)):
+    # Assuming 'original_image' and 'sam_result' are available
+    mask = sam_result[i]['segmentation'].astype(np.uint8) * 255
+    x, y, w, h = sam_result[i]['bbox']
+    cropped_mask = mask[y:y+h, x:x+w]
+    cropped_image = cv2.bitwise_and(image_rgb[y:y+h, x:x+w], image_rgb[y:y+h, x:x+w], mask=cropped_mask)
+    cv2.imwrite(os.path.join(HOME, "example_maps", f"example_cropped_{i + 1}.jpeg"), cropped_image)
 
-mask_annotator = sv.MaskAnnotator(color_lookup=sv.ColorLookup.INDEX)
+t2=time.time()
 
-detections = sv.Detections.from_sam(sam_result=sam_result)
-
-annotated_image = mask_annotator.annotate(scene=image_bgr.copy(), detections=detections)
-
-cv2.imwrite(os.path.join(HOME, "images", "example_annotated.jpeg"), annotated_image)
+print(f"Time: {t2 - t1:.3f}s")
