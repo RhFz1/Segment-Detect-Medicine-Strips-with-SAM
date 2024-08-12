@@ -1,12 +1,14 @@
 import torch
 import torch.nn as nn
-from preprocess import transforms
+import warnings
+from preprocess import data_transforms
 from PIL import Image
 from model import Model 
 
+warnings.filterwarnings("ignore")
+
 model_path = '/home/ec2-user/FAIR/SAM/registry/model.pth'
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
 
 # Initialize the model
 model = Model()
@@ -15,12 +17,11 @@ model.eval()
 model = model.to(device)
 
 # Function to perform inference
-def predict(image_matrix):
-    # Define the transformation
-    data_transforms = transforms
-    
+def predict(image_path: str):
+    # Load the image
+    image = Image.open(image_path).convert('RGB')
     # Convert the matrix to a PIL image
-    image = Image.fromarray(image_matrix.astype('uint8'), 'RGB')
+    # image = Image.fromarray(image_matrix.astype('uint8'), 'RGB')
     
     # Apply transformations
     image = data_transforms(image)
@@ -32,6 +33,6 @@ def predict(image_matrix):
     # Perform inference
     with torch.no_grad():
         output = model(image)
-        prediction = output.item()
+        prediction = output
     
     return prediction
