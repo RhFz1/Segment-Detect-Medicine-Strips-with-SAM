@@ -1,4 +1,5 @@
 import torch
+import pandas as pd
 import time
 import os
 import cv2
@@ -30,8 +31,12 @@ sam = sam_model_registry[MODEL_TYPE](checkpoint=CHECKPOINT_PATH).to(device=DEVIC
 mask_generator = SamAutomaticMaskGenerator(sam, min_mask_region_area=10000)
 
 
-nval = os.listdir(os.path.join(HOME, "m2_train_images", 'train', 'No'))[-1].split('.')[0].split('_')[-1]
-yval = os.listdir(os.path.join(HOME, "m2_train_images", 'train', 'Yes'))[-1].split('.')[0].split('_')[-1]
+fs = os.listdir(os.path.join(HOME, "m2_train_images", 'train', 'Yes'))
+fs = sorted(fs , key = lambda x: int(x.split('.')[0].split('_')[-1]))
+yval = fs[-1].split('.')[0].split('_')[-1]
+fs = os.listdir(os.path.join(HOME, "m2_train_images", 'train', 'No'))
+fs = sorted(fs , key = lambda x: int(x.split('.')[0].split('_')[-1]))
+nval = fs[-1].split('.')[0].split('_')[-1]
 
 prev = max(int(nval), int(yval))
 num_maps = 24
@@ -46,7 +51,7 @@ for i, image_path in enumerate(os.listdir(os.path.join(HOME, "images"))):
     t2 = time.time()
     print(f"Total time for Segmentation of {i + 1}th image. Time: {t2 - t1:.4f}s")
 
-    for j in range(min(len(sam_result), num_maps)):
+    for j in range(min(len(sam_result),num_maps)):
         # Assuming 'original_image' and 'sam_result' are available
         mask = sam_result[j]['segmentation'].astype(np.uint8) * 255
         x, y, w, h = sam_result[j]['bbox']
@@ -54,7 +59,7 @@ for i, image_path in enumerate(os.listdir(os.path.join(HOME, "images"))):
         cropped_mask = mask[y:y+h, x:x+w]
         cropped_image = cv2.bitwise_and(image_rgb[y:y+h, x:x+w], image_rgb[y:y+h, x:x+w], mask=cropped_mask)
         cv2.imwrite(os.path.join(HOME, "example_maps", f"example_cropped_{prev + j + 1}.jpeg"), cropped_image)
-    prev += num_maps
+    prev += min(len(sam_result), num_maps)
 
     for j, img in enumerate(os.listdir(os.path.join(HOME, "example_maps"))):
 
