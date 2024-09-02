@@ -41,7 +41,7 @@ nval = fs[-1].split('.')[0].split('_')[-1]
 prev = max(int(nval), int(yval))
 num_maps = 24
 
-for i, image_path in enumerate(os.listdir(os.path.join(HOME, "images"))):
+for i, image_path in enumerate(os.listdir(os.path.join(HOME, "images"))): 
     t0 = time.time()
     image_path = os.path.join(HOME, "images", image_path)
     image_bgr = cv2.imread(image_path)
