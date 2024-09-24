@@ -1,5 +1,5 @@
 from src.pipeline.inference import Inference
-import time
+
 
 def test_inference():
     inference = Inference()

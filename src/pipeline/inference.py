@@ -19,10 +19,11 @@ class Inference():
         self.sam = SAM()
         self.gpt = GPT()
         self.ocr = easyocr.Reader(['en'])
-        self.num_maps = 4
+        self.num_maps = 5
         self.vit_threshold = 0.90
         self.dist_min = 1e9
         self.area_min = 1e9
+        self.area_thresh = 80000
         self.scale_factor = 0
         self.area_real = 5.72555 # this is cm^2
         self.strip_config = pd.read_csv('./assets/Tablet_Config.csv')
@@ -48,6 +49,9 @@ class Inference():
         for i in range(min(self.num_maps, len(sam_result))):
             # Getting the mask area in pixels
             c_ar = sam_result[i]['area']
+            
+            if c_ar > self.area_thresh:
+                continue
             # Getting the rough center of the mask
             cx, cy = sam_result[i]['point_coords'][0]
             # Getting the crop boundaries
@@ -82,7 +86,7 @@ class Inference():
 
             # prediction
             prediction = self.vit.inference(image=cropped_image)
-            
+           
             # prediction is of this format tensor([[0.99]], device='cuda:0')
             if prediction.item() > self.vit_threshold:
                 # Here we send the cropped image to ocr.
@@ -102,6 +106,10 @@ class Inference():
                 if isinstance(gpt_result, list):
                     gpt_result = gpt_result[0]
 
+
+                if gpt_result is None or 'Medicine_Name' not in gpt_result or gpt_result['Medicine_Name'] == '':
+                    continue
+                
                 # pull the medicine name from the gpt_result
                 medicine_name = gpt_result['Medicine_Name']
 
