@@ -3,6 +3,7 @@ import time
 import os
 import cv2
 import warnings
+import numpy as np
 from PIL import Image
 from segment_anything import sam_model_registry, SamAutomaticMaskGenerator
 from src.logging.logger import logging
@@ -18,7 +19,7 @@ class SAM():
         self.sam = sam_model_registry[MODEL_TYPE](checkpoint=CHECKPOINT_PATH).to(device=DEVICE)
         self.mask_generator = SamAutomaticMaskGenerator(self.sam)
 
-    def inference(self, image_path: str = None, image: cv2 = None):
+    def inference(self, image_path: str = None, image = None):
 
         # Here im expecting an image path or a np.ndarray image
         # If image path is provided, load the image and convert it to RGB
@@ -30,7 +31,10 @@ class SAM():
             image = cv2.imread(image_path)
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         else:
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            if isinstance(image, Image.Image):
+                image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+            else:
+                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
         sam_result = self.mask_generator.generate(image)
 

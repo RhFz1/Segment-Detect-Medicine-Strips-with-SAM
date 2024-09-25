@@ -1,9 +1,10 @@
+import os
+import sys
+import pandas as pd
 from openai import OpenAI
 from dotenv import load_dotenv
-import os
 from src.logging.logger import logging
 from src.exceptions.custom_exceptions import CustomException
-import sys
  
 # Load environment variables from .env file
 load_dotenv('.env')
@@ -11,8 +12,22 @@ load_dotenv('.env')
 # Initialize the OpenAI client with API key from environment variables
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
+# This block is to fetch the medicine names from the CSV file
+def get_names():
+    # Read the CSV file
+    df = pd.read_csv('./assets/Tablet_Config.csv')
+    # Get the medicine names
+    names = ', '.join(df['Tablet Name'].to_list())
+    # Return the medicine names
+    return names
+
+def get_prompt():
+    prompt = f"You are a medical expert and also a json expert, you will be given a text which is the OCR output from the medicine strip image. These are the possible medicine names: {get_names()}. {open('./assets/prompt.txt').read()}"
+    return prompt
 
 class GPT():
+    def __init__(self):
+        self.prompt = get_prompt()
 
     def inference(self, question):
         """
@@ -25,19 +40,15 @@ class GPT():
             response = client.chat.completions.create(
                 model=os.getenv('OPENAI_MODEL'),  # Note: Replace with the correct model name if "gpt-4o-mini" is not available
                 messages=[
-                    {"role": "system", "content": "You are a medical expert and you are given the OCR output of a medicine strip image."
-                                                  "The medicine name is one out of these (medicine names : Obnyx,Ecosprin-75,Ezamed D 40mg,Sebifin,Combiflam,Calpol 650,Zofer,Shelcal-500,Azithral-500,Dolo-650)"
-                                                  "Pease extract information and return it in a structured format like json dont return quotes just the dictionary string."
-                                                  "Medicine_Name, formula/ingredients, strength, expiry date, manufacturer, manifacturing date, in the same key format. If not found return null"},
+                    {"role": "system", "content": self.prompt},
                     {"role": "user", "content": question}
                 ],
-                max_tokens=200
+                max_tokens=200,
             )
             return response.choices[0].message.content.strip()
         except Exception as e:
             logging.info(e)
             raise CustomException(e, sys)
- 
 # Instructions:
 # 1. Ensure that the OpenAI API key is set in the .env file.
 # 2. Call the ask_gpt function with the OCR output as the question parameter.

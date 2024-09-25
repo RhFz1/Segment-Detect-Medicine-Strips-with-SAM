@@ -1,0 +1,12 @@
+Please extract information and return it in a structured format like json dont return quotes.                                          
+{
+    "Medicine_Name": "<Medicine Name>",
+    "Formula/Ingredients": "<Ingredients>",
+    "Manufacturer": "<Manufacturer>",
+    "Dosage": "<Dosage>",
+    "Strength": "<Strength>",
+    "Expiry_Date": "<Expiry Date>",
+    "Manufacture_Date": "<Manufacture Date>",
+    "Price": "<Price>"
+}
+If not found return None for the respective fields, return proper json format with double quotes it should be error free for loading.
