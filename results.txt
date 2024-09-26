@@ -1,0 +1,372 @@
+Image: img_010.jpg
+-----------------------------------
+Count: 13
+Area: 71.13
+Medicine_Name: Dolo-650
+Formula/Ingredients: Paracetamol IP 850 mg
+Manufacturer: None
+Dosage: 1 tablet as required
+Strength: 650 mg
+Expiry_Date: DEC - 2027
+Manufacture_Date: M/600/2012
+Price: 33.60
+----
+-----------------------------------
+
+Image: img_011.jpg
+-----------------------------------
+Count: 8
+Area: 90.03
+Medicine_Name: Obnyx
+Formula/Ingredients: Enzalutamide 40 mg
+Manufacturer: Zydus Lifesciences Limited
+Dosage: As directed by the Physician
+Strength: 40 mg
+Expiry_Date: 03/2026
+Manufacture_Date: 04/2024
+Price: Rs.856.42 per 4 capsules inclusive of all taxes
+----
+-----------------------------------
+
+Image: img_012.jpg
+-----------------------------------
+Count: 4
+Area: 85.81
+Medicine_Name: Obnyx
+Formula/Ingredients: None
+Manufacturer: Zydus Lifesciences Limited
+Dosage: As directed by the physician
+Strength: 40 mg
+Expiry_Date: 03/2026
+Manufacture_Date: 04/2024
+Price: Rs.856.42
+----
+Count: 15
+Area: 68.25
+Medicine_Name: Dolo-650
+Formula/Ingredients: Paracetamol Tablets IP
+Manufacturer: None
+Dosage: 1-2 Tablets
+Strength: 650 mg
+Expiry_Date: DEC-2027
+Manufacture_Date: None
+Price: 1733.60
+----
+-----------------------------------
+
+Image: img_013.jpg
+-----------------------------------
+Count: 10
+Area: 90.9
+Medicine_Name: Ezamed D
+Formula/Ingredients: Esomeprazole Magnesium Trihydrate IP 40 mg (as enteric coated pellets), Domperidone
+Manufacturer: Pure & Cure Healthcare (A subsidiary of Akums Drugs & Pharmaceuticals Ltd)
+Dosage: As directed by the Physician
+Strength: 40 mg
+Expiry_Date: 242024
+Manufacture_Date: 0172023
+Price: 209.20
+----
+Count: 13
+Area: 70.29
+Medicine_Name: Dolo-650
+Formula/Ingredients: Paracetamol 650 mg
+Manufacturer: None
+Dosage: As directed by the Physician
+Strength: 650 mg
+Expiry_Date: 2027-12
+Manufacture_Date: None
+Price: 450.00
+----
+-----------------------------------
+
+Image: img_014.jpg
+-----------------------------------
+Count: 16
+Area: 80.75
+Medicine_Name: Combiflam
+Formula/Ingredients: Ibuprofen and Paracetamol Tablets
+Manufacturer: null
+Dosage: 1 tablet 3 times a day or as directed by the physician
+Strength: null
+Expiry_Date: FEB.2026
+Manufacture_Date: null
+Price: null
+----
+Count: 12
+Area: 66.24
+Medicine_Name: Dolo-650
+Formula/Ingredients: Paracetamol 650 mg
+Manufacturer: None
+Dosage: 1 tablet
+Strength: 650 mg
+Expiry_Date: DEC.2027
+Manufacture_Date: IAN.2024
+Price: 33,60
+----
+-----------------------------------
+
+Image: img_015.jpg
+-----------------------------------
+Count: 10
+Area: 99.36
+Medicine_Name: Ezamed D
+Formula/Ingredients: Esomeprazole Magnesium Trihydrate IP 40 mg, Sustained Release Domperidone 30 mg
+Manufacturer: Pure & Cure Healthcare
+Dosage: As directed by the Physician
+Strength: 40 mg
+Expiry_Date: 2024-04-01
+Manufacture_Date: None
+Price: 209.20
+----
+Count: 4
+Area: 83.59
+Medicine_Name: Obnyx
+Formula/Ingredients: Enzalutamide Capsules 40 mg
+Manufacturer: Zydus Lifesciences Limited
+Dosage: As directed by the Physician
+Strength: 40 mg
+Expiry_Date: 03/2026
+Manufacture_Date: 04/2024
+Price: 856.42
+----
+-----------------------------------
+
+Image: img_016.jpg
+-----------------------------------
+Count: 15
+Area: 65.56
+Medicine_Name: Shelcal-500
+Formula/Ingredients: Calcium Carbonate, Vitamin D3
+Manufacturer: not found
+Dosage: 1 tablet
+Strength: 500 mg, 250 IU
+Expiry_Date: October 2028
+Manufacture_Date: not found
+Price: not found
+----
+Count: 3
+Area: 81.46
+Medicine_Name: Obnyx
+Formula/Ingredients: Enzalutamide 40 mg
+Manufacturer: Zydus Lifesciences Limited
+Dosage: As directed by the Physician
+Strength: 40 mg
+Expiry_Date: 03/2026
+Manufacture_Date: 04/2024
+Price: Rs.856.42
+----
+-----------------------------------
+
+Image: img_017.jpg
+-----------------------------------
+Count: 15
+Area: 59.7
+Medicine_Name: Calpol 650
+Formula/Ingredients: Paracetamol IP 650 mg
+Manufacturer: Glaxo SmithKline Pharmaceuticals Limited
+Dosage: 75 Tablets
+Strength: 650 mg
+Expiry_Date: None
+Manufacture_Date: None
+Price: Max Rs.30.07
+----
+Count: 4
+Area: 82.6
+Medicine_Name: Obnyx
+Formula/Ingredients: Enzalutamide 40 mg
+Manufacturer: Zydus Lifesciences Limited
+Dosage: As directed by the Physician
+Strength: 40 mg
+Expiry_Date: 03/2026
+Manufacture_Date: 04/2024
+Price: Rs.856.42
+----
+-----------------------------------
+
+Image: img_018.jpg
+-----------------------------------
+Count: 7
+Area: 79.98
+Medicine_Name: Obnyx
+Formula/Ingredients: null
+Manufacturer: Zydus Cadila
+Dosage: As directed by the physician
+Strength: 40 mg
+Expiry_Date: 03/2027
+Manufacture_Date: 04/2024
+Price: Rs.856.42
+----
+-----------------------------------
+
+Image: img_019.jpg
+-----------------------------------
+Count: 12
+Area: 56.02
+Medicine_Name: Calpol 650
+Formula/Ingredients: Paracetamol IP 650 mg
+Manufacturer: GlaxoSmithKline Pharmaceuticals Limited
+Dosage: To be used as directed by physician.
+Strength: 650 mg
+Expiry_Date: Jan. 25
+Manufacture_Date: Feb 23
+Price: R5.30
+----
+Count: 15
+Area: 67.21
+Medicine_Name: Dolo-650
+Formula/Ingredients: Paracetamol
+Manufacturer: None
+Dosage: 1 tablet
+Strength: 650 mg
+Expiry_Date: 2027-12
+Manufacture_Date: None
+Price: 83.60
+----
+-----------------------------------
+
+Image: img_020.jpg
+-----------------------------------
+Count: 18
+Area: 93.22
+Medicine_Name: Ezamed D
+Formula/Ingredients: Esomeprazole & Sustained Release Domperidone
+Manufacturer: Akums Drugs & Pharmaceuticals Ltd
+Dosage: 1 capsule twice daily
+Strength: 40 mg
+Expiry_Date: 2023-07-20
+Manufacture_Date: None
+Price: None
+----
+-----------------------------------
+
+Image: img_021.jpg
+-----------------------------------
+Count: 8
+Area: 97.65
+Medicine_Name: Ezamed D
+Formula/Ingredients: Esomeprazole 40 mg, Domperidone 30 mg
+Manufacturer: Pure & Cure Healthcare PYC Ltd, a subsidiary of Akums Drugs & Pharmaceuticals Ltd.
+Dosage: As directed by the Physician.
+Strength: 40 mg
+Expiry_Date: 12/2024
+Manufacture_Date: 01/2023
+Price: 209.20
+----
+Count: 20
+Area: 91.17
+Medicine_Name: Combiflam
+Formula/Ingredients: Ibuprofen 400mg; Paracetamol 325mg
+Manufacturer: sanofi
+Dosage: Adults: 1 tablet 3 times a day or as directed by the physician
+Strength: Ibuprofen 400mg; Paracetamol 325mg
+Expiry_Date: Feb. 2026
+Manufacture_Date: Mar. 2024
+Price: None
+----
+-----------------------------------
+
+Image: img_022.jpg
+-----------------------------------
+Count: 15
+Area: 68.79
+Medicine_Name: Dolo-650
+Formula/Ingredients: Paracetamol 650 mg
+Manufacturer: None
+Dosage: None
+Strength: 650 mg
+Expiry_Date: 2027
+Manufacture_Date: None
+Price: None
+----
+Count: 13
+Area: 60.29
+Medicine_Name: Shelcal-500
+Formula/Ingredients: Calcium Carbonate equivalent to 500 mg Elemental Calcium, Vitamin D3 250 IU
+Manufacturer: Qorage Tokad 382 771, DAGEUGicAnSLTDIA
+Dosage: Twice daily with food or as directed by physician
+Strength: 500 mg Calcium, 250 IU Vitamin D3
+Expiry_Date: None
+Manufacture_Date: None
+Price: None
+----
+-----------------------------------
+
+Image: img_023.jpg
+-----------------------------------
+Count: 10
+Area: 91.18
+Medicine_Name: Ezamed D
+Formula/Ingredients: Esomoprazole Magnesium Trihydrate IP 10 mg, Domperidone IP 30 mg
+Manufacturer: Pura & Cure Healthcare Pvt Ltd
+Dosage: As directed by the Physician
+Strength: 40 mg
+Expiry_Date: 12/2024
+Manufacture_Date: 01/2023
+Price: 209.20
+----
+Count: 3
+Area: 81.73
+Medicine_Name: Obnyx
+Formula/Ingredients: None
+Manufacturer: Zydus Cadila
+Dosage: As directed by the physician
+Strength: 40 mg
+Expiry_Date: 04/2024
+Manufacture_Date: 25SNLL/2023
+Price: Rs.856.42
+----
+-----------------------------------
+
+Image: img_024.jpg
+-----------------------------------
+Count: 15
+Area: 58.8
+Medicine_Name: Calpol 650
+Formula/Ingredients: Paracetamol IP 650 mg
+Manufacturer: GlaxoSmithKline Pharmaceuticals Limited
+Dosage: To be used as directed by physician
+Strength: 650 mg
+Expiry_Date: January 2025
+Manufacture_Date: None
+Price: Rs.30.07
+----
+Count: 20
+Area: 89.88
+Medicine_Name: Combiflam
+Formula/Ingredients: Ibuprofen and Paracetamol
+Manufacturer: SANOFI INDIA LIMITED
+Dosage: 1 tablet 3-4 times a day or as directed by the physician
+Strength: 500 mg Ibuprofen and 325 mg Paracetamol
+Expiry_Date: FEB.2026
+Manufacture_Date: MAR.2024
+Price: 50.65
+----
+-----------------------------------
+
+Image: img_025.jpg
+-----------------------------------
+Count: 15
+Area: 58.53
+Medicine_Name: Calpol 650
+Formula/Ingredients: Paracetamol IP 650 mg
+Manufacturer: GlaxoSmithKline Pharmaceuticals Limited
+Dosage: As directed by physician
+Strength: 650 mg
+Expiry_Date: Jan-25
+Manufacture_Date: None
+Price: Rs.30.07
+----
+Count: 10
+Area: 100.12
+Medicine_Name: Ezamed D
+Formula/Ingredients: Esomeprazole Magnesium Trihydrate IP 40 mg, Domperidone IP 30 mg
+Manufacturer: Pure & Cure Healthcare Ltd
+Dosage: 2 Capsules
+Strength: 40 mg
+Expiry_Date: 12420
+Manufacture_Date: 01/2023
+Price: None
+----
+-----------------------------------
+

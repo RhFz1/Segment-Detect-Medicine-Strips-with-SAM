@@ -31,15 +31,17 @@ class Inference():
         self.vit_threshold = 0.80
         self.dist_min = 1e9
         self.area_min = 1e9
-        self.circle_area_thresh = 80000
-        self.strip_area_thresh = int(os.getenv('STRIP_AREA_THRESH'))
+        self.circle_area_thresh = 100000
+        self.strip_area_thresh = max(int(os.getenv('STRIP_AREA_THRESH')), 2000000)
         self.scale_factor = 0
         self.area_real = 5.72555 # this is cm^2
         self.strip_config = pd.read_csv('./assets/Tablet_Config.csv')
-        self.result = {}
         self.count_threshold = 0.1 # this is the threshold for the count of the tablets, 10% of the total count.
+        self.prompt = open('./assets/prompt.txt', 'r').read()
 
     def inference(self, image_path: str = None, image: Image = None):
+
+        self.result = {}
         # Check if the image_path and image is None
         if image_path is None and image is None:
             return {}
@@ -60,7 +62,9 @@ class Inference():
             # Converting the image to RGB
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-        self.num_maps = self.yolo.calculate_strip_count(image if image is not None else image_path) + 2
+        self.num_maps = 6# self.yolo.calculate_strip_count(image if image is not None else image_path) + 4
+
+        print(f"Number of Strips: {self.num_maps}")
 
         for i in range(min(self.num_maps, len(sam_result))):
             # Getting the mask area in pixels
@@ -91,6 +95,8 @@ class Inference():
 
             if sam_result[i]['area'] > self.strip_area_thresh:
                 continue
+
+            print(f"{i + 1}th map -- {sam_result[i]['area']}")
             # Perform some operations on the sam_result
             mask = sam_result[i]['segmentation'].astype('uint8') * 255
             # Getting the bounding box
@@ -106,18 +112,22 @@ class Inference():
             # prediction
             prediction = self.vit.inference(image=cropped_image)
             
-            # cv2.imwrite(f'./assets/cropped_image_{prediction.item():.2f}.jpg', cv2.cvtColor(cropped_image, cv2.COLOR_RGB2BGR))
+            cv2.imwrite(f'./assets/cropped_image_{sam_result[i]["area"]:.2f}.jpg', cv2.cvtColor(cropped_image, cv2.COLOR_RGB2BGR))
             # prediction is of this format tensor([[0.99]], device='cuda:0')
             if prediction.item() >= self.vit_threshold:
                 # Here we send the cropped image to ocr.
                 ocr_res = self.ocr.readtext(cropped_image, detail = 0, paragraph = True)
                 ocr_rot_res = self.ocr.readtext(rotate_image(cropped_image, 270), detail = 0, paragraph = True)
 
+                # Now we need to combine the results from the ocr
                 text = ' '.join(ocr_res)
                 text = text + ' '.join(ocr_rot_res)
 
+                # Now we need to append the prompt to the text
+                prompt = text + self.prompt
+
                 # Now this text will be sent to GPT for results.
-                gpt_result = self.gpt.inference(text)
+                gpt_result = self.gpt.inference(prompt)
 
                 # converting the gpt_result to a dictionary
                 gpt_result = json.loads(gpt_result)

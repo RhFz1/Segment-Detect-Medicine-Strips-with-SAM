@@ -17,7 +17,7 @@ class SAM():
 
     def __init__(self):
         self.sam = sam_model_registry[MODEL_TYPE](checkpoint=CHECKPOINT_PATH).to(device=DEVICE)
-        self.mask_generator = SamAutomaticMaskGenerator(self.sam)
+        self.mask_generator = SamAutomaticMaskGenerator(self.sam, stability_score_thresh=0.98)
 
     def inference(self, image_path: str = None, image = None):
 

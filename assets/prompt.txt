@@ -1,4 +1,5 @@
-Please extract information and return it in a structured format like json dont return quotes.                                          
+Please extract information from the text given above and return it in a structured format like JSON. Ensure there are no extra characters or text around the JSON output. Return proper JSON format with double quotes around all string values. The JSON should be error-free and suitable for loading directly in Python. If any value is not found, return `null` for that field.
+
 {
     "Medicine_Name": "<Medicine Name>",
     "Formula/Ingredients": "<Ingredients>",
@@ -9,4 +10,3 @@ Please extract information and return it in a structured format like json dont r
     "Manufacture_Date": "<Manufacture Date>",
     "Price": "<Price>"
 }
-If not found return None for the respective fields, return proper json format with double quotes it should be error free for loading.

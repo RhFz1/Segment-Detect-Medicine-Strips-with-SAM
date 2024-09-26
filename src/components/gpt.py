@@ -21,13 +21,9 @@ def get_names():
     # Return the medicine names
     return names
 
-def get_prompt():
-    prompt = f"You are a medical expert and also a json expert, you will be given a text which is the OCR output from the medicine strip image. These are the possible medicine names: {get_names()}. {open('./assets/prompt.txt').read()}"
-    return prompt
-
 class GPT():
     def __init__(self):
-        self.prompt = get_prompt()
+        self.names = get_names()
 
     def inference(self, question):
         """
@@ -40,7 +36,8 @@ class GPT():
             response = client.chat.completions.create(
                 model=os.getenv('OPENAI_MODEL'),  # Note: Replace with the correct model name if "gpt-4o-mini" is not available
                 messages=[
-                    {"role": "system", "content": self.prompt},
+                    {"role": "system", "content": "You are a medical expert and also a json expert, you will be given a text which is the OCR output from the medicine strip image."
+                                                  f"These are the possible medicine names: {self.names} that you can expect in the OCR output."},
                     {"role": "user", "content": question}
                 ],
                 max_tokens=200,

@@ -1,33 +1,47 @@
-import easyocr
+import torch
+import os
 import numpy as np
-from PIL import Image, ImageFilter
-from src.constants.cv2_image_rotations import rotate_image
+from PIL import Image
+from segment_anything import sam_model_registry, SamPredictor
+import cv2
 
-def enhance_image_for_ocr(image_path, scale_factor=2.0):
-    # Step 1: Enlarge the image
-    # Step 1: Enlarge the image
-    image = Image.open(image_path)
-    new_size = (int(image.width * scale_factor), int(image.height * scale_factor))
-    enlarged_image = image.resize(new_size, Image.LANCZOS)
 
-    # Step 3: Denoise the image (using OpenCV's fastNlMeansDenoising for noise reduction)
-    open_cv_image = np.array(enlarged_image)
-    # denoised_image = cv2.fastNlMeansDenoising(open_cv_image, None, 30, 7, 21)
+DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+MODEL_TYPE = "vit_h"
+CHECKPOINT_PATH = os.path.join("./artifacts/sam", "sam_vit_h_4b8939.pth")
 
-    # Step 4: Sharpen the image using PIL's filter
-    pil_denoised_image = Image.fromarray(open_cv_image)
-    sharpened_image = pil_denoised_image.filter(ImageFilter.SHARPEN)
+sam = sam_model_registry[MODEL_TYPE](checkpoint=CHECKPOINT_PATH).to(device=DEVICE)
+predictor = SamPredictor(sam)
 
-    sharpened_image.save('./assets/enhanced_image.jpg')
 
-    # Save or return the final enhanced image
-    return sharpened_image
+# Load the image
+image = cv2.imread('./assets/img_006.jpg')
 
-# Example usage
-enlarged_image = enhance_image_for_ocr('./assets/cropped_image_2.jpg', 2)
+predictor.set_image(image)
 
-ocr = easyocr.Reader(['en'])
+# Define the coordinate box
+input_box = np.array([761,  906, 1282, 1147])
 
-for rotation in range(0, 360, 90):
-    rotated_image = rotate_image(np.array(enlarged_image), rotation)
-    print(ocr.readtext(image=rotated_image, detail = 0, paragraph = True))
+# Perform prediction
+masks, scores, logits = predictor.predict(
+    point_coords=None,
+    point_labels=None,
+    box=input_box[None, :],
+    multimask_output=False
+)
+
+mask = masks[0]
+
+# Calculate the area
+area_in_pixels = np.sum(mask)
+print(f"Segment area in pixels: {area_in_pixels}")
+
+# Find the bounding box of the mask (non-black region)
+y_indices, x_indices = np.where(mask)  # Get indices of the True values in the mask
+x_min, x_max = x_indices.min(), x_indices.max()  # Min and Max X coordinates
+y_min, y_max = y_indices.min(), y_indices.max()  # Min and Max Y coordinates
+
+# Crop the image to the bounding box
+cropped_image = image[y_min:y_max, x_min:x_max]
+
+cv2.imwrite('cropped_segment.jpg', cv2.cvtColor(cropped_image, cv2.COLOR_RGB2BGR))
