@@ -12,7 +12,7 @@ def test_inference(image_path: str = './assets/img_006.jpg'):
 
 if __name__ == '__main__':
 
-    with open('results.txt', 'w') as f:
+    with open('results.txt', 'w') as f: 
         for i in range(10, 26):
             
             path = f'./assets/img_0{i}.jpg'

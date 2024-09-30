@@ -369,4 +369,82 @@ Manufacture_Date: 01/2023
 Price: None
 ----
 -----------------------------------
+0: 448x640 1 circle, 1 strip, 85.8ms
+Speed: 5.9ms preprocess, 85.8ms inference, 425.9ms postprocess per image at shape (1, 3, 448, 640)
+Scale Factor: 0.000094, Area Real: 5.72555
+Image 10 processed in 14.56 seconds
 
+0: 480x640 1 circle, 2 strips, 85.4ms
+Speed: 2.1ms preprocess, 85.4ms inference, 1.0ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000107, Area Real: 5.72555
+Image 11 processed in 17.87 seconds
+
+0: 480x640 1 circle, 2 strips, 6.6ms
+Speed: 2.2ms preprocess, 6.6ms inference, 1.0ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000085, Area Real: 5.72555
+Image 12 processed in 15.51 seconds
+
+0: 480x640 1 circle, 2 strips, 6.7ms
+Speed: 2.0ms preprocess, 6.7ms inference, 0.9ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000088, Area Real: 5.72555
+Image 13 processed in 16.23 seconds
+
+0: 480x640 1 circle, 2 strips, 7.1ms
+Speed: 2.1ms preprocess, 7.1ms inference, 1.0ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000090, Area Real: 5.72555
+Image 14 processed in 16.96 seconds
+
+0: 480x640 1 circle, 2 strips, 7.3ms
+Speed: 2.1ms preprocess, 7.3ms inference, 0.9ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000092, Area Real: 5.72555
+Image 15 processed in 19.47 seconds
+
+0: 480x640 1 circle, 2 strips, 7.8ms
+Speed: 2.2ms preprocess, 7.8ms inference, 1.0ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000086, Area Real: 5.72555
+Image 16 processed in 16.60 seconds
+
+0: 480x640 1 circle, 2 strips, 7.7ms
+Speed: 2.0ms preprocess, 7.7ms inference, 0.9ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000300, Area Real: 5.72555
+Image 17 processed in 13.59 seconds
+
+0: 480x640 1 circle, 2 strips, 8.1ms
+Speed: 2.1ms preprocess, 8.1ms inference, 0.9ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000094, Area Real: 5.72555
+Image 18 processed in 16.64 seconds
+
+0: 448x640 1 circle, 2 strips, 8.5ms
+Speed: 2.1ms preprocess, 8.5ms inference, 0.9ms postprocess per image at shape (1, 3, 448, 640)
+Scale Factor: 0.000082, Area Real: 5.72555
+Image 19 processed in 15.53 seconds
+
+0: 480x640 1 circle, 2 strips, 8.7ms
+Speed: 2.0ms preprocess, 8.7ms inference, 1.0ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000209, Area Real: 5.72555
+Image 20 processed in 16.26 seconds
+
+0: 480x640 1 circle, 2 strips, 9.3ms
+Speed: 2.1ms preprocess, 9.3ms inference, 1.0ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000091, Area Real: 5.72555
+Image 21 processed in 20.78 seconds
+
+0: 480x640 1 circle, 2 strips, 9.3ms
+Speed: 2.0ms preprocess, 9.3ms inference, 0.9ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000082, Area Real: 5.72555
+Image 22 processed in 15.46 seconds
+
+0: 480x640 1 circle, 2 strips, 9.8ms
+Speed: 2.1ms preprocess, 9.8ms inference, 0.9ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000104, Area Real: 5.72555
+Image 23 processed in 20.92 seconds
+
+0: 480x640 1 circle, 2 strips, 10.1ms
+Speed: 2.1ms preprocess, 10.1ms inference, 0.9ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000085, Area Real: 5.72555
+Image 24 processed in 18.95 seconds
+
+0: 480x640 1 circle, 2 strips, 10.5ms
+Speed: 2.1ms preprocess, 10.5ms inference, 0.9ms postprocess per image at shape (1, 3, 480, 640)
+Scale Factor: 0.000091, Area Real: 5.72555
+Image 25 processed in 18.73 seconds
