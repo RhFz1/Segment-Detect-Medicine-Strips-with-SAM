@@ -8,8 +8,14 @@ pandas==2.2.3
 Pillow==10.4.0
 python-dotenv==1.0.1
 segment_anything==1.0
-torch==2.2.2
-torchvision==0.17.2
-ultralytics==8.2.100
-numpy==1.26.4
 streamlit==1.38.0
+ultralytics==8.3.3
+numpy==1.26.4
+pymongo==4.10.1
+flask_cors==5.0.0
+azure-cognitiveservices-vision-computervision==0.9.0
+msrest==0.7.1
+rapidfuzz==3.10.1
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==2.2.2+cu121
+torchvision==0.17.2+cu121
