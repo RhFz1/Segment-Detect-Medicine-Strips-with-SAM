@@ -1,12 +1,15 @@
-Please extract information from the text given above and return it in a structured format like JSON. Ensure there are no extra characters or text around the JSON output. Return proper JSON format with double quotes around all string values. The JSON should be error-free and suitable for loading directly in Python. If any value is not found, return `null` for that field.
-
+Please provide the medicine details in the following JSON format.
+Ensure you give only the json and nothing else before and after it, give accurate results if found for attributes else place "None" (including quotes).
+```json
 {
-    "Medicine_Name": "<Medicine Name>",
-    "Formula/Ingredients": "<Ingredients>",
-    "Manufacturer": "<Manufacturer>",
-    "Dosage": "<Dosage>",
-    "Strength": "<Strength>",
-    "Expiry_Date": "<Expiry Date>",
-    "Manufacture_Date": "<Manufacture Date>",
-    "Price": "<Price>"
+  "Formula": "<Ingredients>",
+  "Manufacturer": "<Manufacturer>",
+  "Dosage": "<Dosage>",
+  "Strength": "<Strength>",
+  "Expiry_date": "<MM/YYYY format>",
+  "Manufacture_date": "<MM/YYYY format>",
+  "Price": "<Price>"
 }
+```
+
+This is the text:
