@@ -5,7 +5,7 @@ import pandas as pd
 import unittest
 import json
 from unittest.mock import patch, MagicMock
-from src.pipeline.inference import Inference
+from src.pipeline.inference_old import Inference
 
 
 class TestInference(unittest.TestCase):
