@@ -1,0 +1,14 @@
+Please provide the medicine details in the following JSON format.
+Ensure you give only the json and nothing else before and after it, give accurate results if found for attributes else place "None" (with quotes).
+```json
+{
+  "Medicine Name" : "<Name of medicine>
+  "Formula": "<Ingredients>",
+  "Manufacturer": "<Manufacturer>",
+  "Dosage": "<Dosage>",
+  "Strength": "<Strength>",
+  "Expiry_date": "<MM/YYYY format>",
+  "Manufacture_date": "<MM/YYYY format>",
+  "Price": "<Price>"
+}
+```

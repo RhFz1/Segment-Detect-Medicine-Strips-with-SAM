@@ -1,0 +1,132 @@
+
+{
+  "medicine_name": "Cisbon-plus",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 96.97
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Palamide-300",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 107.68
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Bun Pro",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 116.384
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Nuhenz",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 116.07
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Nurewire",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 120.98
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Shelcal 500",
+  "attributes": {
+    "total_tablets": 15,
+    "area_of_strip": 62.52
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Com-D3",
+  "attributes": {
+    "total_tablets": 4,
+    "area_of_strip": 35.90
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Calinta Max",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 55.68
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Bisoheart-2.5",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 41.965
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Bisoheart-5",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 41.852
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Eliquis 5mg",
+  "attributes": {
+    "total_tablets": 30,
+    "area_of_strip": 54.148
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Cudce",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 112.488
+  },
+  "category": "box"
+};
+{
+  "medicine_name": ""Calinta Farc"",
+  "attributes": {
+    "total_tablets": 15,
+    "area_of_strip": 88.789
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Tinni car",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 88.68
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Meg LC",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 61.75
+  },
+  "category": "box"
+};
+{
+  "medicine_name": "Cefubit-500",
+  "attributes": {
+    "total_tablets": 10,
+    "area_of_strip": 116.32
+  },
+  "category": "box"
+};
+
+
+
