@@ -1,0 +1,7 @@
+/venv
+.env
+/logs
+/final_data
+/runs
+/assets/test_images
+/artifacts/sam

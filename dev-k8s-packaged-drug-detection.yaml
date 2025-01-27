@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: packaged-drug-detection
+  namespace: smartrack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: packaged-drug-detection
+  template:
+    metadata:
+      labels:
+        name: packaged-drug-detection
+    spec:
+      containers:
+      - image: tsdevopsteam/platform:packaged-drug-detection-$BUILD_NUMBER
+        name: packaged-drug-detection
+        envFrom:
+        - configMapRef:
+            name: packaged-drug-detection-env
+        - secretRef:
+            name: packaged-drug-detection-secret 
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: ts-platform
+        
+      
+      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: packaged-drug-detection
+  namespace: smartrack
+spec:
+  type: ClusterIP
+  ports: 
+  - port: 8080
+  selector:
+    name: packaged-drug-detection
